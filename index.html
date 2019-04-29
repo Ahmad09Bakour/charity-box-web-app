@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Charity Box</title>
+    <!--we got this link below from  fontawesome.com for the trash icon -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/style1.css">
+
+</head>
+<body>
+<h1>Charity Budget List</h1>
+<table id="items">
+    <thead>
+    <tr>
+        <th>Description</th>
+        <th>DeadLine</th>
+        <th>Done</th>
+        <th>Delete</th>
+    </tr>
+
+    </thead>
+
+    <tbody>
+
+     <tr>
+        <td class="description"></td>
+        <td class="deadline"></td>
+        <td><input type="checkbox" title="Done" class="mark_done" data-id="${item.id}"></td>
+        <td><a herf="#" class="delete fas fa-trash-alt" data-id="${item.id}"></a></td>
+    </tr>
+    </tbody>
+
+</table>
+<br/>
+<br/>
+
+<h3>Add a New Item</h3>
+<form id="create-item">
+    <input type="text" id="description-input" title="Description" placeholder="Description" name="description" />
+    <input type="date" id="deadline-input" title="DeadLine" name="deadline" />
+    <input type="submit" id="save-button" title="Save" value="Add" />
+
+</form>
+
+<script src="js/lib/jquery-3.3.1.js"></script>
+<script src="js/lib/charity-box.js"></script>
+</body>
+</html>
