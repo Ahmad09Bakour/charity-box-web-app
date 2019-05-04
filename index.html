@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:https="http://java.sun.com/JSP/Page">
 <head>
     <meta charset="UTF-8">
     <title>Charity Box</title>
@@ -8,26 +8,32 @@
     <link rel="stylesheet" type="text/css" href="css/style1.css">
 
 </head>
-<body>
+<body style="background-image: url(https://previews.123rf.com/images/arrow/arrow1712/arrow171200001/91617500-charity-and-donation-background-with-various-icons.jpg); background-repeat: no-repeat; background-size: 100% ">
+
 <h1>Charity Budget List</h1>
 <table id="items">
     <thead>
     <tr>
         <th>Description</th>
+        <th>Location</th>
         <th>DeadLine</th>
         <th>Done</th>
-        <th>Delete</th>
+        <th>Remove</th>
+        <th>Note</th>
     </tr>
 
     </thead>
 
     <tbody>
 
+    
      <tr>
         <td class="description"></td>
+         <td class="location"></td>
         <td class="deadline"></td>
         <td><input type="checkbox" title="Done" class="mark_done" data-id="${item.id}"></td>
         <td><a herf="#" class="delete fas fa-trash-alt" data-id="${item.id}"></a></td>
+         <td class="note"></td>
     </tr>
     </tbody>
 
@@ -37,8 +43,10 @@
 
 <h3>Add a New Item</h3>
 <form id="create-item">
-    <input type="text" id="description-input" title="Description" placeholder="Description" name="description" />
+    <input type="text" id="description-input" title="Description" placeholder="Add a description" name="description" />
+    <input type="text" id="location-input" title="Location" placeholder="Add a location" name="location" />
     <input type="date" id="deadline-input" title="DeadLine" name="deadline" />
+    <input type="text" id="note-input" title="Note" placeholder="Add a note" name="note" />
     <input type="submit" id="save-button" title="Save" value="Add" />
 
 </form>

@@ -11,11 +11,12 @@ h1{
 }
 
 #items td, #items th {
-    border: 1px solid white;
+    border: 1px solid #ffffff;
     padding: 8px;
 }
 
-#items tr:nth-child(even){background-color: red}
+#items tr:nth-child(even){background-color: rgba(178, 180, 179, 1)
+}
 
 #items tr:hover{background-color: gray}
 

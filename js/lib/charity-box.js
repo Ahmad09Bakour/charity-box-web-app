@@ -1,14 +1,18 @@
 window.CharityBudgetList = {
-    apiUrl: 'http://localhost:8083/charity-budget-list',
+    apiUrl: 'http://localhost:8083/charity-budget-items',
 
     addItem: function () {
         var description = $('#description-input').val();
+        var location = $('#location-input').val();
         var deadline = $('#deadline-input').val();
+        var note = $('#note-input').val();
 
         var data = {
             description: description,
+            location: location,
             deadLine: deadline,
-            done: false
+            done: false,
+            note: note
         };
 
         $.ajax({url: CharityBudgetList.apiUrl,
@@ -61,14 +65,16 @@ window.CharityBudgetList = {
     },
 
     getTableRow: function (item) {
-        var formattedDeadLine = new Date(item.deadLine).toLocaleDateString("en-US");
+        var formattedDeadLine = new Date(item.deadline).toLocaleDateString("en-US");
         var checkedAttribute = item.done ? "checked" : ""; // item if(?) it was done then show "checked", if not (:) then show nothing
         // we got it from the html sheet from <tbody> and we add the $ etc
         return ` <tr>
         <td class="description">${item.description}</td>
+        <td class="location">${item.location}</td>
         <td class="deadline">${formattedDeadLine}</td>
         <td><input type="checkbox" ${checkedAttribute} title="Done" class="mark_done" data-id="${item.id}"></td>
         <td><a herf="#" class="delete fas fa-trash-alt" data-id="${item.id}"></a></td>
+        <td class="note">${item.note}</td>
     </tr>`
     },
 
